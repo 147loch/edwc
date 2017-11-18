@@ -55,14 +55,14 @@
       border: medium none;
       border-right: 1px solid #444 !important;
       border-radius: 0;
-      color: rgb(255,115,0) !important;
+      color: rgb(246,175,61) !important;
     }
     .nav-tabs > .active {
       background-color: #303136 !important;
       border: medium none;
       border-right: 1px solid #444 !important;
       border-radius: 0;
-      color: rgb(246,175,61) !important;
+      color: rgb(255,115,0) !important;
     }
     .nav-tabs > .mr-auto > .nav-item:last-child {
       border-right: 0px solid #fff !important;
@@ -80,12 +80,19 @@
     }
 
     /* Spinning loader */
+    .pusher {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(22, 22, 22, 0.8) !important;
+      opacity: 1;
+    }
     .loader {
       position: absolute;
       width: 100px;
       height: 100px;
       left: calc(50% - 50px);
-      top: calc(50% - 50px);
+      top: calc(50% - 50px - 3.5em);
     }
 
     .circular {
@@ -135,6 +142,12 @@
         stroke: #ff7300;
       }
     }
+    .btn.disabled:hover {
+      background-color: #161616 !important;
+    }
+    .btn.disabled > i{
+      color: #999 !important;
+    }
     </style>
   </head>
   <body>
@@ -146,80 +159,127 @@
         <a class="nav-item nav-link" id="nav-starmap-tab" data-toggle="tab" href="#nav-starmap" role="tab" aria-controls="nav-starmap" aria-selected="false">Starmap</a>
         <a class="nav-item nav-link" id="nav-inara-tab" data-toggle="tab" href="#nav-inara" role="tab" aria-controls="nav-inara" aria-selected="false">Inara</a>
       </div>
+      <button id="back-btn" class="btn nav-item nav-link disabled"><i class="material-icons">chevron_left</i></button>
+      <button id="forw-btn" class="btn nav-item nav-link disabled"><i class="material-icons">chevron_right</i></button>
+      <button id="home-btn" class="btn nav-item nav-link"><i class="material-icons">home</i></button>
       <button id="min-btn" class="nav-item nav-link"><i class="material-icons">remove</i></button>
       <button id="max-btn" class="nav-item nav-link"><i class="material-icons" id="max-btn-i">fullscreen</i></button>
       <button id="close-btn" class="nav-item nav-link"><i class="material-icons">close</i></button>
     </nav>
     <main role="main" class="">
+      <div class="pusher">
+        <div class="loader">
+          <svg class="circular">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+          </svg>
+        </div>
+      </div>
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-eddb" role="tabpanel" aria-labelledby="nav-eddb-tab">
-          <div class="loader">
-            <svg class="circular">
-              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-            </svg>
-          </div>
           <webview id="webviewEddb" preload="./manipulateEDDB.js" src="http://eddb.io" disableguestresize style="visibility: hidden"></webview>
         </div>
         <div class="tab-pane fade" id="nav-coriolis" role="tabpanel" aria-labelledby="nav-coriolis-tab">
-          <div class="loader">
-            <svg class="circular">
-              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-            </svg>
-          </div>
-          <webview id="webviewCoriolis" preload="./manipulateWebview.js" src="http://coriolis.edcd.io" disableguestresize></webview>
+          <webview id="webviewCoriolis" preload="./manipulateWebview.js" src="http://coriolis.edcd.io" disableguestresize style="visibility: hidden"></webview>
         </div>
         <div class="tab-pane fade" id="nav-shipyard" role="tabpanel" aria-labelledby="nav-shipyard-tab">
-          <div class="loader">
-            <svg class="circular">
-              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-            </svg>
-          </div>
-          <webview id="webviewShipyard" preload="./manipulateWebview.js" src="http://www.edshipyard.com/" disableguestresize></webview>
+          <webview id="webviewShipyard" preload="./manipulateWebview.js" src="http://www.edshipyard.com/" disableguestresize style="visibility: hidden"></webview>
         </div>
         <div class="tab-pane fade" id="nav-starmap" role="tabpanel" aria-labelledby="nav-starmap-tab">
-          <div class="loader">
-            <svg class="circular">
-              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-            </svg>
-          </div>
-          <webview id="webviewStarmap" preload="./manipulateEDSM.js" src="http://www.edsm.net/" disableguestresize></webview>
+          <webview id="webviewStarmap" preload="./manipulateEDSM.js" src="http://www.edsm.net/" disableguestresize style="visibility: hidden"></webview>
         </div>
         <div class="tab-pane fade" id="nav-inara" role="tabpanel" aria-labelledby="nav-inara-tab">
-          <div class="loader">
-            <svg class="circular">
-              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-            </svg>
-          </div>
-          <webview id="webviewInara" preload="./manipulateWebview.js" src="http://inara.cz/" disableguestresize></webview>
+          <webview id="webviewInara" preload="./manipulateWebview.js" src="http://inara.cz/" disableguestresize style="visibility: hidden"></webview>
         </div>
       </div>
     </main>
     <script type="text/javascript">
     (function () {
-      const {BrowserWindow} = require('electron').remote
 
       function init() {
-          // Minimize task
-          document.getElementById("min-btn").addEventListener("click", (e) => {
-              var window = BrowserWindow.getFocusedWindow();
-              window.minimize();
-          });
+        const {BrowserWindow, webContents} = require('electron').remote
+        // Minimize task
+        document.getElementById("min-btn").addEventListener("click", (e) => {
+          let mainWindow = BrowserWindow.getFocusedWindow();
+          mainWindow.minimize();
+        });
 
-          // Maximize window
-          document.getElementById("max-btn").addEventListener("click", (e) => {
-              var window = BrowserWindow.getFocusedWindow();
-              if(window.isMaximized()){
-                window.unmaximize();
-              }else{
-                window.maximize();
+        // Maximize window
+        document.getElementById("max-btn").addEventListener("click", (e) => {
+          let mainWindow = BrowserWindow.getFocusedWindow();
+          if(mainWindow.isMaximized()){
+            mainWindow.unmaximize();
+          }else{
+            mainWindow.maximize();
+          }
+        })
+
+        // Close app
+        document.getElementById("close-btn").addEventListener("click", (e) => {
+          let mainWindow = BrowserWindow.getFocusedWindow();
+          mainWindow.close();
+        });
+
+        // Check if go back and activate button and same for forward
+        (function checkNav() {
+          $('a[data-toggle="tab"]').on('shown.bs.tab', (e) => {
+            let currentID = $('.tab-pane.show').attr('id');
+            let activeTab = "";
+            switch (currentID) {
+              case 'nav-eddb':
+                activeTab = "webviewEddb";
+                break;
+              case 'nav-coriolis':
+                activeTab = "webviewCoriolis";
+                break;
+              case 'nav-shipyard':
+                activeTab = "webviewShipyard";
+                break;
+              case 'nav-starmap':
+                activeTab = "webviewStarmap";
+                break;
+              case 'nav-inara':
+                activeTab = "webviewInara";
+                break;
+              default:
+                console.log("Webview is undefined, so no goback and goforward...");
+            }
+
+            let wv = document.getElementById(activeTab);
+            $('#' + activeTab).on('did-finish-load', () => {
+              if (wv.canGoBack()) {
+                $('#back-btn').removeClass('disabled');
+                $('#back-btn').on('click', () => {
+                  $('#' + activeTab).css({opacity: 1, visibility: "visible"}).animate({opacity: 0}, '400', () => {
+                    wv.goToOffset(-1);
+                  });
+                  $('#' + activeTab).css("visibility",  "hidden");
+                });
+              } else {
+                $('#back-btn').addClass('disabled');
               }
-          })
 
-          // Close app
-          document.getElementById("close-btn").addEventListener("click", (e) => {
-              var window = BrowserWindow.getFocusedWindow();
-              window.close();
-          });
+              if (wv.canGoForward()) {
+                $('#forw-btn').removeClass('disabled');
+                $('#forw-btn').on('click', (mainWindow) => {
+                  wv.goForward();
+                });
+              } else {
+                $('#forw-btn').addClass('disabled');
+              }
+            });
+          })
+          $('a[data-toggle="tab"]').trigger('shown.bs.tab')
+        })();
+
+        $('#home-btn').on('click', () => {
+          document.getElementById('webviewEddb').loadURL("http://eddb.io");
+          document.getElementById('webviewCoriolis').loadURL("http://coriolis.edcd.io");
+          document.getElementById('webviewShipyard').loadURL("http://www.edshipyard.com/");
+          document.getElementById('webviewStarmap').loadURL("http://www.edsm.net/");
+          document.getElementById('webviewInara').loadURL("http://inara.cz/");
+        })
+
+        $("#webviewEddb")[0].openDevTools();
       };
 
       document.onreadystatechange =  () => {
@@ -231,7 +291,7 @@
 
     $(window).on('resize', () => {
       const {BrowserWindow} = require('electron').remote
-      const mainWindow = BrowserWindow.getFocusedWindow();
+      let mainWindow = BrowserWindow.getFocusedWindow();
 
       let isMaximized = mainWindow.isMaximized();
       let isMinimized = mainWindow.isMinimized();
@@ -243,10 +303,7 @@
         $('#max-btn-i').text("fullscreen");
       }
     })
-
-    $("#webview")[0].openDevTools();
     </script>
     <script src="./assets/js/loader.js" charset="utf-8"></script>
-    <script src="./assets/js/handleWebsiteChanges.js" charset="utf-8"></script>
   </body>
 </html>

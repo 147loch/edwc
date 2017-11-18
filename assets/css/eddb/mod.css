@@ -279,6 +279,13 @@ table.dataTable thead th,
   background-color: transparent;
 }
 
+.stationSearchResult table thead tr th, .systemSearchResult table thead tr th, .factionSearchResult table thead tr th, .bodySearchResult table thead tr th, .factionControllingSystems table tr.systemRow td, .factionControllingSystems table .systemPresenceTag{
+  background-color: rgb(255,116,0) !important;
+}
+.factionControllingSystems table tr.isHighlighted td {
+  background-color: rgba(255, 126, 0, 0.2);
+}
+
 div.FixedHeader_Cloned td
 {
   background-color: transparent !important;
@@ -706,4 +713,32 @@ inset 0 -8px 8px -8px rgb(253,131,31);
 
 .input-group-addon {
     background-color: transparent !important;
+}
+
+.icon-planet:before {
+  color: rgb(255,115,0);
+}
+
+.body-property-icon-list {
+  color: rgb(255,115,0);
+}
+
+.material-rarity-group-10 {
+    background-color: rgb(193, 116, 0);
+    color: #ffd4b3;
+}
+
+.material-rarity-group-20 {
+    background-color: rgb(172, 93, 0);
+    color: #facca7;
+}
+
+.material-rarity-group-30 {
+    background-color: rgb(129, 54, 0);
+    color: #fe8b6e;
+}
+
+.material-rarity-group-40 {
+    background-color: rgb(92, 28, 0);
+    color: #ff736a;
 }

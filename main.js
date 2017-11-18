@@ -30,7 +30,7 @@ function createWindow () {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
-  
+
   // Hide the menu
   mainWindow.setMenu(null);
 
@@ -41,9 +41,7 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
-
-  const {webContents} = require('electron')
-
+  
   // We assume that `win` points to a `BrowserWindow` instance containing a
   // `<webview>` with `disableguestresize`.
 
