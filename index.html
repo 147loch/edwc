@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Elite Companion</title>
+
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="./assets/js/bootstrap/bootstrap.bundle.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap-grid.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style media="screen">
+    body {
+      background-color:#161616;
+      overflow: hidden;
+      padding-top: 3.5em;
+    }
+    .nav-tabs{
+      background-color:#161616 !important;
+      border: medium none;
+      height: 3.5em !important;
+      -webkit-app-region: drag !important;
+    }
+    button.nav-item {
+      background-color:#161616 !important;
+      border: medium none;
+      height: 3.5em !important;
+      padding-left: 1em !important;
+      padding-right: 1em !important;
+    }
+    .tab-content{
+      background-color:#303136;
+      color:#fff;
+      width:100% !important;
+      height: calc(100% - 3.5em) !important;
+    }
+    .nav-tabs > .nav-item {
+      /*border: medium none;*/
+      color: #aaa;
+      border-right: 1px solid #444 !important;
+      height: 3.5em !important;
+      border-radius: 0;
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      -webkit-app-region: no-drag;
+    }
+    .nav-tabs > .nav-link:hover{
+      background-color: #303136 !important;
+      border: medium none;
+      border-right: 1px solid #444 !important;
+      border-radius: 0;
+      color: rgb(255,115,0) !important;
+    }
+    .nav-tabs > .active {
+      background-color: #303136 !important;
+      border: medium none;
+      border-right: 1px solid #444 !important;
+      border-radius: 0;
+      color: rgb(246,175,61) !important;
+    }
+    .nav-tabs > .mr-auto > .nav-item:last-child {
+      border-right: 0px solid #fff !important;
+    }
+    .nav-tabs > .nav-item:last-child {
+      border-right: 0px solid #fff !important;
+    }
+
+    /* Webview Resize Fix in main.js */
+    webview {
+      position:absolute;
+      display: inline-flex !important;
+      width:100% !important;
+      height: calc(100% - 3.5em) !important;
+    }
+
+    /* Spinning loader */
+    .loader {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      left: calc(50% - 50px);
+      top: calc(50% - 50px);
+    }
+
+    .circular {
+      animation: rotate 2s linear infinite;
+      height: 100px;
+      position: relative;
+      width: 100px;
+    }
+
+    .path {
+      stroke-dasharray: 1,200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      stroke-linecap: round;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1,200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 89,200;
+        stroke-dashoffset: -35;
+      }
+      100% {
+        stroke-dasharray: 89,200;
+        stroke-dashoffset: -124;
+      }
+    }
+    @keyframes color {
+      100%, 0% {
+        stroke: #f6af3e;
+      }
+      40% {
+        stroke: #ff7300;
+      }
+      66% {
+        stroke: #ec953d;
+      }
+      80%, 90% {
+        stroke: #ff7300;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="nav nav-tabs fixed-top" id="myTab" role="tablist">
+      <div class="nav nav-tabs mr-auto">
+        <a class="nav-item nav-link active" id="nav-eddb-tab" data-toggle="tab" href="#nav-eddb" role="tab" aria-controls="nav-eddb" aria-selected="true">EDDB</a>
+        <a class="nav-item nav-link" id="nav-coriolis-tab" data-toggle="tab" href="#nav-coriolis" role="tab" aria-controls="nav-coriolis" aria-selected="false">Coriolis</a>
+        <a class="nav-item nav-link" id="nav-shipyard-tab" data-toggle="tab" href="#nav-shipyard" role="tab" aria-controls="nav-shipyard" aria-selected="false">Shipyard</a>
+        <a class="nav-item nav-link" id="nav-starmap-tab" data-toggle="tab" href="#nav-starmap" role="tab" aria-controls="nav-starmap" aria-selected="false">Starmap</a>
+        <a class="nav-item nav-link" id="nav-inara-tab" data-toggle="tab" href="#nav-inara" role="tab" aria-controls="nav-inara" aria-selected="false">Inara</a>
+      </div>
+      <button id="min-btn" class="nav-item nav-link"><i class="material-icons">remove</i></button>
+      <button id="max-btn" class="nav-item nav-link"><i class="material-icons" id="max-btn-i">fullscreen</i></button>
+      <button id="close-btn" class="nav-item nav-link"><i class="material-icons">close</i></button>
+    </nav>
+    <main role="main" class="">
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-eddb" role="tabpanel" aria-labelledby="nav-eddb-tab">
+          <div class="loader">
+            <svg class="circular">
+              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+          </div>
+          <webview id="webviewEddb" preload="./manipulateEDDB.js" src="http://eddb.io" disableguestresize style="visibility: hidden"></webview>
+        </div>
+        <div class="tab-pane fade" id="nav-coriolis" role="tabpanel" aria-labelledby="nav-coriolis-tab">
+          <div class="loader">
+            <svg class="circular">
+              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+          </div>
+          <webview id="webviewCoriolis" preload="./manipulateWebview.js" src="http://coriolis.edcd.io" disableguestresize></webview>
+        </div>
+        <div class="tab-pane fade" id="nav-shipyard" role="tabpanel" aria-labelledby="nav-shipyard-tab">
+          <div class="loader">
+            <svg class="circular">
+              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+          </div>
+          <webview id="webviewShipyard" preload="./manipulateWebview.js" src="http://www.edshipyard.com/" disableguestresize></webview>
+        </div>
+        <div class="tab-pane fade" id="nav-starmap" role="tabpanel" aria-labelledby="nav-starmap-tab">
+          <div class="loader">
+            <svg class="circular">
+              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+          </div>
+          <webview id="webviewStarmap" preload="./manipulateEDSM.js" src="http://www.edsm.net/" disableguestresize></webview>
+        </div>
+        <div class="tab-pane fade" id="nav-inara" role="tabpanel" aria-labelledby="nav-inara-tab">
+          <div class="loader">
+            <svg class="circular">
+              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+          </div>
+          <webview id="webviewInara" preload="./manipulateWebview.js" src="http://inara.cz/" disableguestresize></webview>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript">
+    (function () {
+      const {BrowserWindow} = require('electron').remote
+
+      function init() {
+          // Minimize task
+          document.getElementById("min-btn").addEventListener("click", (e) => {
+              var window = BrowserWindow.getFocusedWindow();
+              window.minimize();
+          });
+
+          // Maximize window
+          document.getElementById("max-btn").addEventListener("click", (e) => {
+              var window = BrowserWindow.getFocusedWindow();
+              if(window.isMaximized()){
+                window.unmaximize();
+              }else{
+                window.maximize();
+              }
+          })
+
+          // Close app
+          document.getElementById("close-btn").addEventListener("click", (e) => {
+              var window = BrowserWindow.getFocusedWindow();
+              window.close();
+          });
+      };
+
+      document.onreadystatechange =  () => {
+          if (document.readyState == "complete") {
+              init();
+          }
+      };
+    })();
+
+    $(window).on('resize', () => {
+      const {BrowserWindow} = require('electron').remote
+      const mainWindow = BrowserWindow.getFocusedWindow();
+
+      let isMaximized = mainWindow.isMaximized();
+      let isMinimized = mainWindow.isMinimized();
+      let isFullScreen = mainWindow.isFullScreen();
+
+      if (isFullScreen || isMaximized) {
+        $('#max-btn-i').text("fullscreen_exit");
+      } else {
+        $('#max-btn-i').text("fullscreen");
+      }
+    })
+
+    $("#webview")[0].openDevTools();
+    </script>
+    <script src="./assets/js/loader.js" charset="utf-8"></script>
+    <script src="./assets/js/handleWebsiteChanges.js" charset="utf-8"></script>
+  </body>
+</html>

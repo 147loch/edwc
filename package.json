@@ -1,0 +1,26 @@
+{
+  "name": "elite-websites-companion",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron ."
+  },
+  "repository": "",
+  "keywords": [
+    "elitedangerous",
+    "websites",
+    "edcd",
+    "companion",
+    "app"
+  ],
+  "author": "CMDR 147LOCH",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-reload": "^1.2.2"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
