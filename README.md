@@ -23,6 +23,20 @@ Features
 * Updates at least every second month
 * Many hidden secrets and details
 
+Websites creators
+-----------------
+Since I have **not** created the websites, rights of most of the app goes to where they should go.
+
+Website | Creator | Contact
+--------|---------|--------
+[EDDB.io](https://eddb.io) | Paul Heisig | [About Page](https://eddb.io/about)
+[Coriolis](https://coriolis.edcd.io) | Maintained by [EDCD Community](http://edcd.github.io/) | [Discord Server](https://discord.gg/0uwCh6R62aQ0eeAX)
+[Shipyard](http://www.edshipyard.com/) | _taleden_ | [Discord Server](https://discordapp.com/channels/164411426939600896/269166597673975810)
+[Starmap (EDSM)](https://www.edsm.net/) | _Anthor_ | [Discord Server](https://discord.gg/0sFOD6GxFZRc1ad0)
+[Inara.cz](https://inara.cz/galaxy-components/) | David Braben & Ian Bell | _Needed_
+
+If any of the above is not correct, please issue a pull request with your changes so it can be fixed as soon as possible.
+
 
 Installation
 ------------
@@ -39,6 +53,7 @@ Ideas and fixes to do (might be interesting if you really want to do participate
 - [ ] Add an about screen
 - [ ] Set up the `.nav-tabs` to host many more websites
 - [ ] Finish up the styling of EDDB.io (some bugs are still out there)
+- [ ] Decide on whether or not [EDShipyard](http://www.edshipyard.com/) should stay since Coriolis does the same job
 - [x] Grab a coffee
 
 Contributing
