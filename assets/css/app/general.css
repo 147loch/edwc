@@ -1,0 +1,134 @@
+body {
+  background-color:#161616;
+  overflow: hidden;
+  padding-top: 3.5em;
+}
+.nav-tabs{
+  background-color:#161616 !important;
+  border: medium none;
+  height: 3.5em !important;
+  -webkit-app-region: drag !important;
+}
+button.nav-item {
+  background-color:#161616 !important;
+  border: medium none;
+  height: 3.5em !important;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+}
+.tab-content{
+  background-color:#303136;
+  color:#fff;
+  width:100% !important;
+  height: calc(100% - 3.5em) !important;
+}
+.nav-tabs > .nav-item {
+  /*border: medium none;*/
+  color: #aaa;
+  border-right: 1px solid #444 !important;
+  height: 3.5em !important;
+  border-radius: 0;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  -webkit-app-region: no-drag;
+}
+.nav-tabs > .nav-link:hover{
+  background-color: #303136 !important;
+  border: medium none;
+  border-right: 1px solid #444 !important;
+  border-radius: 0;
+  color: rgb(246,175,61) !important;
+}
+.nav-tabs > .active {
+  background-color: #303136 !important;
+  border: medium none;
+  border-right: 1px solid #444 !important;
+  border-radius: 0;
+  color: rgb(255,115,0) !important;
+}
+.nav-tabs > .mr-auto > .nav-item:last-child {
+  border-right: 0px solid #fff !important;
+}
+.nav-tabs > .nav-item:last-child {
+  border-right: 0px solid #fff !important;
+}
+
+/* Webview Resize Fix in main.js */
+webview {
+  position:absolute;
+  display: inline-flex !important;
+  width:100% !important;
+  height: calc(100% - 3.5em) !important;
+}
+
+/* Spinning loader */
+.pusher {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22, 22, 22, 0.8) !important;
+  opacity: 1;
+}
+.loader {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px - 3.5em);
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100px;
+  position: relative;
+  width: 100px;
+}
+
+.path {
+  stroke-dasharray: 1,200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124;
+  }
+}
+@keyframes color {
+  100%, 0% {
+    stroke: #f6af3e;
+  }
+  40% {
+    stroke: #ff7300;
+  }
+  66% {
+    stroke: #ec953d;
+  }
+  80%, 90% {
+    stroke: #ff7300;
+  }
+}
+.btn.disabled:hover {
+  background-color: #161616 !important;
+}
+.btn.disabled > i{
+  color: #999 !important;
+}

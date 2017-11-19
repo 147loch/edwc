@@ -12,143 +12,7 @@
     <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap-grid.min.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <style media="screen">
-    body {
-      background-color:#161616;
-      overflow: hidden;
-      padding-top: 3.5em;
-    }
-    .nav-tabs{
-      background-color:#161616 !important;
-      border: medium none;
-      height: 3.5em !important;
-      -webkit-app-region: drag !important;
-    }
-    button.nav-item {
-      background-color:#161616 !important;
-      border: medium none;
-      height: 3.5em !important;
-      padding-left: 1em !important;
-      padding-right: 1em !important;
-    }
-    .tab-content{
-      background-color:#303136;
-      color:#fff;
-      width:100% !important;
-      height: calc(100% - 3.5em) !important;
-    }
-    .nav-tabs > .nav-item {
-      /*border: medium none;*/
-      color: #aaa;
-      border-right: 1px solid #444 !important;
-      height: 3.5em !important;
-      border-radius: 0;
-      padding-left: 1.5em;
-      padding-right: 1.5em;
-      padding-top: 1em;
-      padding-bottom: 1em;
-      -webkit-app-region: no-drag;
-    }
-    .nav-tabs > .nav-link:hover{
-      background-color: #303136 !important;
-      border: medium none;
-      border-right: 1px solid #444 !important;
-      border-radius: 0;
-      color: rgb(246,175,61) !important;
-    }
-    .nav-tabs > .active {
-      background-color: #303136 !important;
-      border: medium none;
-      border-right: 1px solid #444 !important;
-      border-radius: 0;
-      color: rgb(255,115,0) !important;
-    }
-    .nav-tabs > .mr-auto > .nav-item:last-child {
-      border-right: 0px solid #fff !important;
-    }
-    .nav-tabs > .nav-item:last-child {
-      border-right: 0px solid #fff !important;
-    }
-
-    /* Webview Resize Fix in main.js */
-    webview {
-      position:absolute;
-      display: inline-flex !important;
-      width:100% !important;
-      height: calc(100% - 3.5em) !important;
-    }
-
-    /* Spinning loader */
-    .pusher {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(22, 22, 22, 0.8) !important;
-      opacity: 1;
-    }
-    .loader {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      left: calc(50% - 50px);
-      top: calc(50% - 50px - 3.5em);
-    }
-
-    .circular {
-      animation: rotate 2s linear infinite;
-      height: 100px;
-      position: relative;
-      width: 100px;
-    }
-
-    .path {
-      stroke-dasharray: 1,200;
-      stroke-dashoffset: 0;
-      animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
-      stroke-linecap: round;
-    }
-
-    @keyframes rotate {
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-    @keyframes dash {
-      0% {
-        stroke-dasharray: 1,200;
-        stroke-dashoffset: 0;
-      }
-      50% {
-        stroke-dasharray: 89,200;
-        stroke-dashoffset: -35;
-      }
-      100% {
-        stroke-dasharray: 89,200;
-        stroke-dashoffset: -124;
-      }
-    }
-    @keyframes color {
-      100%, 0% {
-        stroke: #f6af3e;
-      }
-      40% {
-        stroke: #ff7300;
-      }
-      66% {
-        stroke: #ec953d;
-      }
-      80%, 90% {
-        stroke: #ff7300;
-      }
-    }
-    .btn.disabled:hover {
-      background-color: #161616 !important;
-    }
-    .btn.disabled > i{
-      color: #999 !important;
-    }
-    </style>
+    <link rel="stylesheet" href="./assets/css/app/general.css">
   </head>
   <body>
     <nav class="nav nav-tabs fixed-top" id="myTab" role="tablist">
@@ -179,131 +43,20 @@
           <webview id="webviewEddb" preload="./manipulateEDDB.js" src="http://eddb.io" disableguestresize style="visibility: hidden"></webview>
         </div>
         <div class="tab-pane fade" id="nav-coriolis" role="tabpanel" aria-labelledby="nav-coriolis-tab">
-          <webview id="webviewCoriolis" preload="./manipulateWebview.js" src="http://coriolis.edcd.io" disableguestresize style="visibility: hidden"></webview>
+          <webview id="webviewCoriolis" preload="./webview/manipulateWebview.js" src="http://coriolis.edcd.io" disableguestresize style="visibility: hidden"></webview>
         </div>
         <div class="tab-pane fade" id="nav-shipyard" role="tabpanel" aria-labelledby="nav-shipyard-tab">
-          <webview id="webviewShipyard" preload="./manipulateWebview.js" src="http://www.edshipyard.com/" disableguestresize style="visibility: hidden"></webview>
+          <webview id="webviewShipyard" preload="./webview/manipulateWebview.js" src="http://www.edshipyard.com/" disableguestresize style="visibility: hidden"></webview>
         </div>
         <div class="tab-pane fade" id="nav-starmap" role="tabpanel" aria-labelledby="nav-starmap-tab">
-          <webview id="webviewStarmap" preload="./manipulateEDSM.js" src="http://www.edsm.net/" disableguestresize style="visibility: hidden"></webview>
+          <webview id="webviewStarmap" preload="./webview/manipulateEDSM.js" src="http://www.edsm.net/" disableguestresize style="visibility: hidden"></webview>
         </div>
         <div class="tab-pane fade" id="nav-inara" role="tabpanel" aria-labelledby="nav-inara-tab">
-          <webview id="webviewInara" preload="./manipulateWebview.js" src="http://inara.cz/" disableguestresize style="visibility: hidden"></webview>
+          <webview id="webviewInara" preload="./webview/manipulateWebview.js" src="http://inara.cz/" disableguestresize style="visibility: hidden"></webview>
         </div>
       </div>
     </main>
-    <script type="text/javascript">
-    (function () {
-
-      function init() {
-        const {BrowserWindow, webContents} = require('electron').remote
-        // Minimize task
-        document.getElementById("min-btn").addEventListener("click", (e) => {
-          let mainWindow = BrowserWindow.getFocusedWindow();
-          mainWindow.minimize();
-        });
-
-        // Maximize window
-        document.getElementById("max-btn").addEventListener("click", (e) => {
-          let mainWindow = BrowserWindow.getFocusedWindow();
-          if(mainWindow.isMaximized()){
-            mainWindow.unmaximize();
-          }else{
-            mainWindow.maximize();
-          }
-        })
-
-        // Close app
-        document.getElementById("close-btn").addEventListener("click", (e) => {
-          let mainWindow = BrowserWindow.getFocusedWindow();
-          mainWindow.close();
-        });
-
-        // Check if go back and activate button and same for forward
-        (function checkNav() {
-          $('a[data-toggle="tab"]').on('shown.bs.tab', (e) => {
-            let currentID = $('.tab-pane.show').attr('id');
-            let activeTab = "";
-            switch (currentID) {
-              case 'nav-eddb':
-                activeTab = "webviewEddb";
-                break;
-              case 'nav-coriolis':
-                activeTab = "webviewCoriolis";
-                break;
-              case 'nav-shipyard':
-                activeTab = "webviewShipyard";
-                break;
-              case 'nav-starmap':
-                activeTab = "webviewStarmap";
-                break;
-              case 'nav-inara':
-                activeTab = "webviewInara";
-                break;
-              default:
-                console.log("Webview is undefined, so no goback and goforward...");
-            }
-
-            let wv = document.getElementById(activeTab);
-            $('#' + activeTab).on('did-finish-load', () => {
-              if (wv.canGoBack()) {
-                $('#back-btn').removeClass('disabled');
-                $('#back-btn').on('click', () => {
-                  $('#' + activeTab).css({opacity: 1, visibility: "visible"}).animate({opacity: 0}, '400', () => {
-                    wv.goToOffset(-1);
-                  });
-                  $('#' + activeTab).css("visibility",  "hidden");
-                });
-              } else {
-                $('#back-btn').addClass('disabled');
-              }
-
-              if (wv.canGoForward()) {
-                $('#forw-btn').removeClass('disabled');
-                $('#forw-btn').on('click', (mainWindow) => {
-                  wv.goForward();
-                });
-              } else {
-                $('#forw-btn').addClass('disabled');
-              }
-            });
-          })
-          $('a[data-toggle="tab"]').trigger('shown.bs.tab')
-        })();
-
-        $('#home-btn').on('click', () => {
-          document.getElementById('webviewEddb').loadURL("http://eddb.io");
-          document.getElementById('webviewCoriolis').loadURL("http://coriolis.edcd.io");
-          document.getElementById('webviewShipyard').loadURL("http://www.edshipyard.com/");
-          document.getElementById('webviewStarmap').loadURL("http://www.edsm.net/");
-          document.getElementById('webviewInara').loadURL("http://inara.cz/");
-        })
-
-        // $("#webviewEddb")[0].openDevTools();
-      };
-
-      document.onreadystatechange =  () => {
-          if (document.readyState == "complete") {
-              init();
-          }
-      };
-    })();
-
-    $(window).on('resize', () => {
-      const {BrowserWindow} = require('electron').remote
-      let mainWindow = BrowserWindow.getFocusedWindow();
-
-      let isMaximized = mainWindow.isMaximized();
-      let isMinimized = mainWindow.isMinimized();
-      let isFullScreen = mainWindow.isFullScreen();
-
-      if (isFullScreen || isMaximized) {
-        $('#max-btn-i').text("fullscreen_exit");
-      } else {
-        $('#max-btn-i').text("fullscreen");
-      }
-    })
-    </script>
+    <script src="./assets/js/general.js" charset="utf-8"></script>
     <script src="./assets/js/loader.js" charset="utf-8"></script>
   </body>
 </html>
