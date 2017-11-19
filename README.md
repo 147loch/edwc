@@ -1,7 +1,7 @@
 Elite: Dangerous Websites Companion
 ====================================
 
-Elite: Dangerous Websites Companion or **EDWC** is an app made by 147loch (Loïc Herman) which puts every website made by the Elite: Dangerous Community Developers team, thus gives a nice dark-themed and useful app to use when playing Elite: Dangerous.
+Elite: Dangerous Websites Companion or **EDWC** is an app made by 147loch [/wʌn ˈhʌndrəd ˈfɔːti-ˈsɛvn /] (Loïc Herman) which puts every website made by the Elite: Dangerous Community Developers team, thus gives a nice dark-themed and useful app to use when playing Elite: Dangerous.
 
 ![EDWC](/assets/images/screenshot1.PNG)
 
@@ -23,6 +23,20 @@ Features
 * Updates at least every second month
 * Many hidden secrets and details
 
+Websites creators
+-----------------
+Since I have **not** created the websites, rights of most of the app goes to where they should go.
+
+Website | Creator | Contact
+--------|---------|--------
+[EDDB.io](https://eddb.io) | Paul Heisig | [About Page](https://eddb.io/about)
+[Coriolis](https://coriolis.edcd.io) | Maintained by [EDCD Community](http://edcd.github.io/) | [Discord Server](https://discord.gg/0uwCh6R62aQ0eeAX)
+[Shipyard](http://www.edshipyard.com/) | _taleden_ | [Discord Server](https://discordapp.com/channels/164411426939600896/269166597673975810)
+[Starmap (EDSM)](https://www.edsm.net/) | _Anthor_ | [Discord Server](https://discord.gg/0sFOD6GxFZRc1ad0)
+[Inara.cz](https://inara.cz/galaxy-components/) | David Braben & Ian Bell | _Needed_
+
+If any of the above is not correct, please issue a pull request with your changes so it can be fixed as soon as possible.
+
 
 Installation
 ------------
@@ -39,6 +53,7 @@ Ideas and fixes to do (might be interesting if you really want to do participate
 - [ ] Add an about screen
 - [ ] Set up the `.nav-tabs` to host many more websites
 - [ ] Finish up the styling of EDDB.io (some bugs are still out there)
+- [ ] Decide on whether or not [EDShipyard](http://www.edshipyard.com/) should stay since Coriolis does the same job
 - [x] Grab a coffee
 
 Contributing
@@ -67,7 +82,7 @@ If you're not sure about your pull request idea, make an issue beforehand so I c
 If you have a great idea to implement in EDWC and you quickly read the guidelines, follow these couple of steps to make your own changes.
 
 ##### Clone the repo
-Clone the latest version of the repo in your work folder by either [downloading the master.zip](https://github.com/147loch/edwc/archive/master.zip), or using the CLI (command-line interfact):
+Clone the latest version of the repo in your work folder by either [downloading the master.zip](https://github.com/147loch/edwc/archive/master.zip), or using the CLI (command-line interface):
 ```
 git clone https://github.com/147loch/edwc.git
 ```
@@ -90,7 +105,7 @@ This can be one of the decisive factors when I'm looking at your code.
 **As of 1.0.1 - initial commit, code is not commented, yet. It's coming in a later update once I've organized the files in a better way.**
 
 ##### Posting your pull request
-Once you've completed your programming, create the pull request. Make sure that you put this template as the comment so I can have the most information out of your pull request as fast as possible:
+Once you've completed your programming, create the pull request. Make sure that you complete this template as the comment so I can have the most information out of your pull request as fast as possible:
   
 ```markdown
 ### Description of the change
