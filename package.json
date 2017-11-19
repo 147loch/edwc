@@ -1,12 +1,19 @@
 {
   "name": "elite-websites-companion",
+  "productName": "Elite: Dangerous Websites Companion",
   "version": "1.0.1",
   "description": "An Electron app that puts every Elite: Dangerous community websites at the same place.",
   "main": "main.js",
   "scripts": {
     "start": "./node_modules/.bin/electron ."
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/147loch/edwc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/147loch/edwc/issues"
+  },
   "keywords": [
     "elitedangerous",
     "websites",
@@ -15,7 +22,7 @@
     "app"
   ],
   "author": "147loch",
-  "license": "MIT",
+  "license": "GPL-3",
   "devDependencies": {
     "electron": "^1.7.9",
     "electron-is-dev": "^0.3.0",
