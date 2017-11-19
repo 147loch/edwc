@@ -8,7 +8,7 @@ Elite: Dangerous Websites Companion or **EDWC** is an app made by 147loch (Loïc
 Features
 --------
 
-* Five fully intergrated websites (as of 1.0.0)
+* Five fully integrated websites (as of 1.0.0)
   * [EDDB.io](https://eddb.io) - _A site about systems, bodies, stations, commodities, materials and trade routes in Elite: Dangerous_ - Includes a full redesign of the website to fit the dark-theme of the application
   * [Coriolis](https://coriolis.edcd.io) - _A ship builder, outfitting and comparison tool for Elite Dangerous_
   * [Shipyard](http://www.edshipyard.com/) - _Another ship builder, much like Coriolis_
@@ -28,6 +28,18 @@ Installation
 ------------
 
 You can install this application by directly downloading the [latest release](https://github.com/147loch/edwc/releases). Also, the app has a built-in auto-updater which will automatically tell you when a new version is available and ask you if you want to update to the newest version.
+
+Future Plans
+------------
+Ideas and fixes to do (might be interesting if you really want to do participate in the project). It's not in a particular order, just how I thought of the things...
+- [ ] Comment the stuff
+- [ ] Organize files and clean up
+- [ ] Push first release
+- [ ] Test the autoupdate
+- [ ] Add an about screen
+- [ ] Set up the `.nav-tabs` to host many more websites
+- [ ] Finish up the styling of EDDB.io (some bugs are still out there)
+- [x] Grab a coffee
 
 Contributing
 ------------
