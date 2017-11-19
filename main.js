@@ -72,7 +72,11 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 9a35b746d35ecd7af894495fb4160f76996823df
   // We assume that `win` points to a `BrowserWindow` instance containing a
   // `<webview>` with `disableguestresize`.
 
