@@ -5,8 +5,6 @@ const url = require('url')
 const fs = require('fs')
 const isDev = require('electron-is-dev')
 
-require('electron-reload')(__dirname)
-
 if (!isDev) {
   const server = 'https://edwc-updates.herokuapp.com/'
   const feed = `${server}/download/${process.platform}`
@@ -35,6 +33,8 @@ if (!isDev) {
     console.error('There was a problem updating the application')
     console.error(message)
   })
+} else {
+  require('electron-reload')(__dirname)
 }
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -72,11 +72,7 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 9a35b746d35ecd7af894495fb4160f76996823df
   // We assume that `win` points to a `BrowserWindow` instance containing a
   // `<webview>` with `disableguestresize`.
 
