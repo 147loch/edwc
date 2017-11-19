@@ -105,7 +105,7 @@ This can be one of the decisive factors when I'm looking at your code.
 **As of 1.0.1 - initial commit, code is not commented, yet. It's coming in a later update once I've organized the files in a better way.**
 
 ##### Posting your pull request
-Once you've completed your programming, create the pull request. Make sure that you put this template as the comment so I can have the most information out of your pull request as fast as possible:
+Once you've completed your programming, create the pull request. Make sure that you complete this template as the comment so I can have the most information out of your pull request as fast as possible:
   
 ```markdown
 ### Description of the change
