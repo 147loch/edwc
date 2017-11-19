@@ -29,6 +29,18 @@ Installation
 
 You can install this application by directly downloading the [latest release](https://github.com/147loch/edwc/releases). Also, the app has a built-in auto-updater which will automatically tell you when a new version is available and ask you if you want to update to the newest version.
 
+Future Plans
+------------
+Ideas and fixes to do (might be interesting if you really want to do participate in the project). It's not in a particular order, just how I thought of the things...
+- [ ] Comment the stuff
+- [ ] Organize files and clean up
+- [ ] Push first release
+- [ ] Test the autoupdate
+- [ ] Add an about screen
+- [ ] Set up the `.nav-tabs` to host many more websites
+- [ ] Finish up the styling of EDDB.io (some bugs are still out there)
+- [x] Grab a coffee
+
 Contributing
 ------------
 
