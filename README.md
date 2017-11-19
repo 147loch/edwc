@@ -67,7 +67,7 @@ If you're not sure about your pull request idea, make an issue beforehand so I c
 If you have a great idea to implement in EDWC and you quickly read the guidelines, follow these couple of steps to make your own changes.
 
 ##### Clone the repo
-Clone the latest version of the repo in your work folder by either [downloading the master.zip](https://github.com/147loch/edwc/archive/master.zip), or using the CLI (command-line interfact):
+Clone the latest version of the repo in your work folder by either [downloading the master.zip](https://github.com/147loch/edwc/archive/master.zip), or using the CLI (command-line interface):
 ```
 git clone https://github.com/147loch/edwc.git
 ```
