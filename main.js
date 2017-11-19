@@ -1,10 +1,41 @@
-const {app, BrowserWindow, webContents} = require('electron');
-
-require('electron-reload')(__dirname);
+const {app, autoUpdater, webContents, dialog, BrowserWindow} = require('electron')
 
 const path = require('path')
 const url = require('url')
 const fs = require('fs')
+const isDev = require('electron-is-dev')
+
+require('electron-reload')(__dirname)
+
+if (!isDev) {
+  const server = 'https://edwc-updates.herokuapp.com/'
+  const feed = `${server}/download/${process.platform}`
+
+  autoUpdater.setFeedURL(feed)
+
+  setInterval(() => {
+    autoUpdater.checkForUpdates()
+  }, 60000)
+
+  autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+    const dialogOpts = {
+      type: 'info',
+      buttons: ['Restart', 'Later'],
+      title: 'Application Update',
+      message: process.platform === 'win32' ? releaseNotes : releaseName,
+      detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+    }
+
+    dialog.showMessageBox(dialogOpts, (response) => {
+      if (response === 0) autoUpdater.quitAndInstall()
+    })
+  })
+
+  autoUpdater.on('error', message => {
+    console.error('There was a problem updating the application')
+    console.error(message)
+  })
+}
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -41,7 +72,7 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
-  
+
   // We assume that `win` points to a `BrowserWindow` instance containing a
   // `<webview>` with `disableguestresize`.
 

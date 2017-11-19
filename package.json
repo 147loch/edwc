@@ -1,7 +1,7 @@
 {
   "name": "elite-websites-companion",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "version": "1.0.1",
+  "description": "An Electron app that puts every Elite: Dangerous community websites at the same place.",
   "main": "main.js",
   "scripts": {
     "start": "./node_modules/.bin/electron ."
@@ -14,13 +14,15 @@
     "companion",
     "app"
   ],
-  "author": "CMDR 147LOCH",
+  "author": "147loch",
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.7.9",
+    "electron-is-dev": "^0.3.0",
     "electron-reload": "^1.2.2"
   },
   "dependencies": {
+    "electron-updater": "^2.16.1",
     "jquery": "^3.2.1"
   }
 }
