@@ -196,9 +196,6 @@ li
   color: rgb(91,5,0);
 }
 
-
-
-
 /* === Quick Links === */
 
 .quick-links
@@ -714,7 +711,10 @@ inset 0 -8px 8px -8px rgb(253,131,31);
 }
 
 .input-group-addon {
-    background-color: transparent !important;
+  background-color: rgb(35,35,35) !important;
+  color: rgb(255,126,0);
+  border: 1px solid rgb(255,126,0);
+
 }
 
 .icon-planet:before {
