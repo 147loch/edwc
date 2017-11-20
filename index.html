@@ -17,11 +17,11 @@
   <body>
     <nav class="nav nav-tabs fixed-top" id="myTab" role="tablist">
       <div class="nav nav-tabs mr-auto">
-        <a class="nav-item nav-link active" id="nav-eddb-tab" data-toggle="tab" href="#nav-eddb" role="tab" aria-controls="nav-eddb" aria-selected="true">EDDB</a>
-        <a class="nav-item nav-link" id="nav-coriolis-tab" data-toggle="tab" href="#nav-coriolis" role="tab" aria-controls="nav-coriolis" aria-selected="false">Coriolis</a>
-        <a class="nav-item nav-link" id="nav-shipyard-tab" data-toggle="tab" href="#nav-shipyard" role="tab" aria-controls="nav-shipyard" aria-selected="false">Shipyard</a>
-        <a class="nav-item nav-link" id="nav-starmap-tab" data-toggle="tab" href="#nav-starmap" role="tab" aria-controls="nav-starmap" aria-selected="false">Starmap</a>
-        <a class="nav-item nav-link" id="nav-inara-tab" data-toggle="tab" href="#nav-inara" role="tab" aria-controls="nav-inara" aria-selected="false">Inara</a>
+        <a class="nav-item nav-link active" id="nav-eddb-tab" data-toggle="tab" href="#nav-eddb" role="tab" aria-controls="nav-eddb" aria-selected="true" data-webview="webviewEddb">EDDB</a>
+        <a class="nav-item nav-link" id="nav-coriolis-tab" data-toggle="tab" href="#nav-coriolis" role="tab" aria-controls="nav-coriolis" aria-selected="false" data-webview="webviewCoriolis">Coriolis</a>
+        <a class="nav-item nav-link" id="nav-shipyard-tab" data-toggle="tab" href="#nav-shipyard" role="tab" aria-controls="nav-shipyard" aria-selected="false" data-webview="webviewShipyard">Shipyard</a>
+        <a class="nav-item nav-link" id="nav-starmap-tab" data-toggle="tab" href="#nav-starmap" role="tab" aria-controls="nav-starmap" aria-selected="false" data-webview="webviewStarmap">Starmap</a>
+        <a class="nav-item nav-link" id="nav-inara-tab" data-toggle="tab" href="#nav-inara" role="tab" aria-controls="nav-inara" aria-selected="false" data-webview="webviewInara">Inara</a>
       </div>
       <button id="back-btn" class="btn nav-item nav-link disabled"><i class="material-icons">chevron_left</i></button>
       <button id="forw-btn" class="btn nav-item nav-link disabled"><i class="material-icons">chevron_right</i></button>
@@ -40,19 +40,19 @@
       </div>
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-eddb" role="tabpanel" aria-labelledby="nav-eddb-tab">
-          <webview id="webviewEddb" preload="./manipulateEDDB.js" src="http://eddb.io" disableguestresize style="visibility: hidden"></webview>
+          <webview id="webviewEddb" preload="./manipulateEDDB.js" src="http://eddb.io" disableguestresize style="visibility: hidden" data-src="http://eddb.io"></webview>
         </div>
         <div class="tab-pane fade" id="nav-coriolis" role="tabpanel" aria-labelledby="nav-coriolis-tab">
-          <webview id="webviewCoriolis" src="http://coriolis.edcd.io" disableguestresize style="visibility: hidden"></webview>
+          <webview id="webviewCoriolis" src="http://coriolis.edcd.io" disableguestresize style="visibility: hidden" data-src="http://coriolis.edcd.io"></webview>
         </div>
         <div class="tab-pane fade" id="nav-shipyard" role="tabpanel" aria-labelledby="nav-shipyard-tab">
-          <webview id="webviewShipyard" src="http://www.edshipyard.com/" disableguestresize style="visibility: hidden"></webview>
+          <webview id="webviewShipyard" src="http://www.edshipyard.com/" disableguestresize style="visibility: hidden" data-src="http://www.edshipyard.com/"></webview>
         </div>
         <div class="tab-pane fade" id="nav-starmap" role="tabpanel" aria-labelledby="nav-starmap-tab">
-          <webview id="webviewStarmap" src="http://www.edsm.net/" disableguestresize style="visibility: hidden"></webview>
+          <webview id="webviewStarmap" src="http://www.edsm.net/" disableguestresize style="visibility: hidden" data-src="http://www.edsm.net/"></webview>
         </div>
         <div class="tab-pane fade" id="nav-inara" role="tabpanel" aria-labelledby="nav-inara-tab">
-          <webview id="webviewInara" src="http://inara.cz/" disableguestresize style="visibility: hidden"></webview>
+          <webview id="webviewInara" src="http://inara.cz/" disableguestresize style="visibility: hidden" data-src="http://inara.cz/"></webview>
         </div>
       </div>
     </main>
