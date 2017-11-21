@@ -3,7 +3,7 @@ Elite: Dangerous Websites Companion
 
 Elite: Dangerous Websites Companion or **EDWC** is an app made by 147loch [/wʌn ˈhʌndrəd ˈfɔːti-ˈsɛvn lɔʃ/] (Loïc Herman) which puts every website made by the Elite: Dangerous Community Developers team, thus gives a nice dark-themed and useful app to use when playing Elite: Dangerous.
 
-![EDWC](/assets/images/screenshot1.PNG)
+![EDWC](/src/images/screenshot1.PNG)
 
 Features
 --------
