@@ -8,8 +8,6 @@
     <script src="./assets/js/bootstrap/bootstrap.bundle.min.js" charset="utf-8"></script>
 
     <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap-grid.min.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/app/general.css">
@@ -17,12 +15,14 @@
   <body>
     <nav class="nav nav-tabs fixed-top" id="myTab" role="tablist">
       <div class="nav nav-tabs mr-auto">
+        <!-- Tabs on the top menu, needs the data-wbview tab so the js code knows what webview it's referencing. I'll add another type of tabs if we want to add an app-based page later. -->
         <a class="nav-item nav-link active" id="nav-eddb-tab" data-toggle="tab" href="#nav-eddb" role="tab" aria-controls="nav-eddb" aria-selected="true" data-webview="webviewEddb">EDDB</a>
         <a class="nav-item nav-link" id="nav-coriolis-tab" data-toggle="tab" href="#nav-coriolis" role="tab" aria-controls="nav-coriolis" aria-selected="false" data-webview="webviewCoriolis">Coriolis</a>
         <a class="nav-item nav-link" id="nav-shipyard-tab" data-toggle="tab" href="#nav-shipyard" role="tab" aria-controls="nav-shipyard" aria-selected="false" data-webview="webviewShipyard">Shipyard</a>
         <a class="nav-item nav-link" id="nav-starmap-tab" data-toggle="tab" href="#nav-starmap" role="tab" aria-controls="nav-starmap" aria-selected="false" data-webview="webviewStarmap">Starmap</a>
         <a class="nav-item nav-link" id="nav-inara-tab" data-toggle="tab" href="#nav-inara" role="tab" aria-controls="nav-inara" aria-selected="false" data-webview="webviewInara">Inara</a>
       </div>
+      <!-- Navigation and windows buttons. Icons provided by Google Material Icons-->
       <button id="back-btn" class="btn nav-item nav-link disabled"><i class="material-icons">chevron_left</i></button>
       <button id="forw-btn" class="btn nav-item nav-link disabled"><i class="material-icons">chevron_right</i></button>
       <button id="home-btn" class="btn nav-item nav-link"><i class="material-icons">home</i></button>
@@ -31,6 +31,7 @@
       <button id="close-btn" class="nav-item nav-link"><i class="material-icons">close</i></button>
     </nav>
     <main role="main" class="">
+      <!-- loader created with css -->
       <div class="pusher">
         <div class="loader">
           <svg class="circular">
@@ -38,8 +39,10 @@
           </svg>
         </div>
       </div>
+      <!-- Webviews under their tabs created with bootstrap -->
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-eddb" role="tabpanel" aria-labelledby="nav-eddb-tab">
+          <!-- This webview calls manipulateEDDB to change the styling -->
           <webview id="webviewEddb" preload="./manipulateEDDB.js" src="http://eddb.io" disableguestresize style="visibility: hidden" data-src="http://eddb.io"></webview>
         </div>
         <div class="tab-pane fade" id="nav-coriolis" role="tabpanel" aria-labelledby="nav-coriolis-tab">
@@ -56,6 +59,7 @@
         </div>
       </div>
     </main>
+    <!-- Main scripts import -->
     <script src="./assets/js/general.js" charset="utf-8"></script>
     <script src="./assets/js/loader.js" charset="utf-8"></script>
   </body>

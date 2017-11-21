@@ -1,8 +1,19 @@
+/**
+ * General CSS file for the main window
+ * This file isn't much, it justs sets the nav-tabs to a dark and squared theme
+ * and also sets the background to dark.
+ *
+ * It also controls the loader.
+ */
+
+/* Main background-color and also padding from top to fit the nav-tabs fixed height at the top */
 body {
   background-color:#161616;
   overflow: hidden;
   padding-top: 3.5em;
 }
+
+/* Bootstrap overrides of their nav-tabs to get dark and squared theme. */
 .nav-tabs{
   background-color:#161616 !important;
   border: medium none;
@@ -23,7 +34,6 @@ button.nav-item {
   height: calc(100% - 3.5em) !important;
 }
 .nav-tabs > .nav-item {
-  /*border: medium none;*/
   color: #aaa;
   border-right: 1px solid #444 !important;
   height: 3.5em !important;
@@ -126,6 +136,8 @@ webview {
     stroke: #ff7300;
   }
 }
+
+/* Navigations buttons and their disabled state */
 .btn.disabled:hover {
   background-color: #161616 !important;
 }

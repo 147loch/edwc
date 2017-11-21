@@ -1,20 +1,28 @@
+// main electron imports
 const {app, autoUpdater, webContents, dialog, BrowserWindow} = require('electron')
 
+// modules needed for the app to work
 const path = require('path')
 const url = require('url')
 const fs = require('fs')
 const isDev = require('electron-is-dev')
 
+// if the app is not in development mode (packaged),
+// load the autoUpdater's distant server connected to github's releases of the repo
 if (!isDev) {
+  // set up the server's (I really should get it working on my Ubuntu 14.04 server cuz using another service is unprofessional...)
   const server = 'https://edwc-updates.herokuapp.com/'
   const feed = `${server}/download/${process.platform}`
 
+  // set up the feed
   autoUpdater.setFeedURL(feed)
 
+  // check if updates every minute.
   setInterval(() => {
     autoUpdater.checkForUpdates()
   }, 60000)
 
+  // when an update is ready to be installed, ask the user and badaboom the update is done.
   autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     const dialogOpts = {
       type: 'info',
@@ -29,16 +37,17 @@ if (!isDev) {
     })
   })
 
+  // if a sad error happens, let the user know.
   autoUpdater.on('error', message => {
     console.error('There was a problem updating the application')
     console.error(message)
   })
 } else {
+  // if in development, load the electron-reload module for simplicity
   require('electron-reload')(__dirname)
 }
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
+// Keep a global reference of the window object
 let mainWindow
 
 function createWindow () {
@@ -46,7 +55,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 1024,
     height: 768,
-    icon: __dirname + '/favicon.jpg',
+    icon: __dirname + '/assets/images/favicon.jpg',
     titleBarStyle: 'hidden',
     frame: false
   })
@@ -56,11 +65,10 @@ function createWindow () {
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
     slashes: true
-  }))
-  // mainWindow.loadURL("https://eddb.io/")
+  }));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools();
 
   // Hide the menu
   mainWindow.setMenu(null);
@@ -73,9 +81,8 @@ function createWindow () {
     mainWindow = null
   })
 
-  // We assume that `win` points to a `BrowserWindow` instance containing a
-  // `<webview>` with `disableguestresize`.
-
+  // When window is resized, reset the webview's dimensions
+  // This is actually a fix of a bug with the webview when the window is resized and the webview wouldn't resize properly.
   mainWindow.on('resize', () => {
     const [width, height] = mainWindow.getContentSize()
     for (let wc of webContents.getAllWebContents()) {
@@ -107,13 +114,10 @@ app.on('window-all-closed', function () {
   }
 })
 
-app.on('activate', function () {
+app.on('activate', () => {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
     createWindow()
   }
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.

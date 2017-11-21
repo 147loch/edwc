@@ -1,4 +1,11 @@
-/* NOTE: CSS STYLESHEET FOR EDDB.IO */
+/*
+ * This is the main CSS file for EDDB that get's imported on the preload function.
+ * This file is not commented (has very little comments that are not precise).
+ * So if you want to do a change, the best way is to activate the devtools in the commented function at the bottom
+ * of the init() function in the general.js file and get your class names.
+ *
+ * But, as of 1.0.2, this file is working and doesn't need any changes for now. So I wouldn't really change it.
+ */
 
 html.site-eddb, body.site-eddb, .wrap
 {
