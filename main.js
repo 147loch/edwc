@@ -55,7 +55,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 1024,
     height: 768,
-    icon: __dirname + '/assets/images/favicon.jpg',
+    icon: __dirname + '/src/images/favicon.jpg',
     titleBarStyle: 'hidden',
     frame: false
   })
