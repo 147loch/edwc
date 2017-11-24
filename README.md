@@ -11,7 +11,7 @@ Features
 * Five fully integrated websites (as of 1.0.0)
   * [EDDB.io](https://eddb.io) - _A site about systems, bodies, stations, commodities, materials and trade routes in Elite: Dangerous_ - Includes a full redesign of the website to fit the dark-theme of the application
   * [Coriolis](https://coriolis.edcd.io) - _A ship builder, outfitting and comparison tool for Elite Dangerous_
-  * [Shipyard](http://www.edshipyard.com/) - _Another ship builder, much like Coriolis_
+  * [ETN](http://etn.io/) - _Trading tool with an exceptional visualization._
   * [Starmap (EDSM)](https://www.edsm.net/) - _The Galactic Positioning System of Elite: Dangerous at your service._
   * [Inara.cz](https://inara.cz/galaxy-components/) - _The companion site for Elite:Dangerous. Market data, CMDR's logs, logbooks, wings, galleries, powerplay, engineers, crafting, galaxy info, news and more..._
 * Compatible with both MacOS and Windows 10 thanks to Electron
@@ -31,7 +31,7 @@ Website | Creator | Contact
 --------|---------|--------
 [EDDB.io](https://eddb.io) | Paul Heisig | [About Page](https://eddb.io/about)
 [Coriolis](https://coriolis.edcd.io) | Maintained by [EDCD Community](http://edcd.github.io/) | [Discord Server](https://discord.gg/0uwCh6R62aQ0eeAX)
-[Shipyard](http://www.edshipyard.com/) | _taleden_ | [Discord Server](https://discordapp.com/channels/164411426939600896/269166597673975810)
+[ETN.io](http://etn.io/) | Joshua Schnarr | [Contact Page](http://etn.io/)
 [Starmap (EDSM)](https://www.edsm.net/) | _Anthor_ | [Discord Server](https://discord.gg/0sFOD6GxFZRc1ad0)
 [Inara.cz](https://inara.cz/galaxy-components/) | David Braben & Ian Bell | _Needed_
 
