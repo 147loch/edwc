@@ -1,10 +1,10 @@
 // main electron imports
-const {app, autoUpdater, webContents, dialog, BrowserWindow} = require('electron')
+const {app, autoUpdater, webContents, dialog, BrowserWindow, session} = require('electron')
 
 // modules needed for the app to work
-const path = require('path')
-const url = require('url')
-const fs = require('fs')
+const path  = require('path')
+const url   = require('url')
+const fs    = require('fs')
 const isDev = require('electron-is-dev')
 
 // if the app is not in development mode (packaged),
@@ -57,7 +57,8 @@ function createWindow () {
     height: 768,
     icon: __dirname + '/src/images/favicon.jpg',
     titleBarStyle: 'hidden',
-    frame: false
+    frame: false,
+    show: false
   })
 
   // and load the index.html of the app.
@@ -97,7 +98,11 @@ function createWindow () {
         })
       }
     }
-  })
+  });
+
+  mainWindow.on('ready-to-show', () => {
+    mainWindow.show();
+  });
 }
 
 // This method will be called when Electron has finished

@@ -1,7 +1,7 @@
 {
   "name": "elite-websites-companion",
   "productName": "Elite: Dangerous Websites Companion",
-  "version": "1.0.2",
+  "version": "0.1.0",
   "description": "An Electron app that puts every Elite: Dangerous community websites at the same place.",
   "main": "main.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "electron-reload": "^1.2.2"
   },
   "dependencies": {
+    "electron-cookies": "^1.1.0",
     "electron-updater": "^2.16.1",
     "jquery": "^3.2.1"
   }
