@@ -14,11 +14,11 @@ function getInstallerConfig () {
   const outPath = path.join(rootPath, 'release-builds')
 
   return Promise.resolve({
-    appDirectory: path.join(outPath, 'edwc-win32-ia32/'),
+    appDirectory: path.join(outPath, 'Elite Dangerous Websites Companion-win32-ia32/'),
     authors: 'Loïc Herman',
     noMsi: true,
     outputDirectory: path.join(outPath, 'windows-installer'),
-    exe: 'edwc.exe',
+    exe: 'Elite Dangerous Websites Companion.exe',
     setupExe: 'edwc.setup.exe',
     setupIcon: path.join(rootPath, 'src', 'images', 'favicon.ico')
   })

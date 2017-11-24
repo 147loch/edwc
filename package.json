@@ -1,15 +1,15 @@
 {
   "name": "edwc",
-  "productName": "edwc",
-  "version": "0.1.5",
+  "productName": "Elite Dangerous Websites Companion",
+  "version": "0.1.6",
   "description": "An Electron app that puts every Elite: Dangerous community websites at the same place.",
   "main": "main.js",
   "scripts": {
     "start": "./node_modules/.bin/electron .",
     "package-mac": "electron-packager . --overwrite --asar=true --platform=darwin --arch=x64 --icon=src/images/favicon.icns --prune=true --out=release-builds",
     "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/images/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=LCH --version-string.FileDescription=LCH --version-string.ProductName=\"edwc\"",
-    "create-installer-mac": "electron-installer-dmg ./release-builds/edwc-darwin-x64/edwc.app edwc --out=release-builds --overwrite --icon=src/images/favicon.icns",
-    "create-installer-win": "node installers/windows/createinstaller.js"
+    "create-installer-win": "node installers/windows/createinstaller.js",
+    "release-win": "npm run package-win && npm run create-installer-win"
   },
   "repository": {
     "type": "git",
