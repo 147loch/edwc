@@ -47,12 +47,12 @@ Future Plans
 ------------
 Ideas and fixes to do (might be interesting if you really want to do participate in the project). It's not in a particular order, just how I thought of the things...
 - [x] Comment the stuff
-- [ ] ~~Organize files and clean up~~ (needs a little more)
+- [x] Organize files and clean up (needs a little more)
 - [ ] Push first release
 - [ ] Test the autoupdate
 - [ ] Add an about screen
-- [ ] Set up the `.nav-tabs` to host many more websites
-- [ ] Finish up the styling of EDDB.io (some bugs are still out there)
+- [ ] ~~Set up the `.nav-tabs` to host many more websites~~ (not enough websites to actually need it)
+- [x] Finish up the styling of EDDB.io (some bugs are still out there)
 - [x] Grab a coffee
 
 Contributing
