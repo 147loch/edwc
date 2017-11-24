@@ -3,7 +3,7 @@ Elite: Dangerous Websites Companion
 
 Elite: Dangerous Websites Companion or **EDWC** is an app made by 147loch [/wʌn ˈhʌndrəd ˈfɔːti-ˈsɛvn lɔʃ/] (Loïc Herman) which puts every website made by the Elite: Dangerous Community Developers team, thus gives a nice dark-themed and useful app to use when playing Elite: Dangerous.
 
-![EDWC](/assets/images/screenshot1.PNG)
+![EDWC](/src/images/screenshot1.PNG)
 
 Features
 --------
@@ -46,14 +46,13 @@ You can install this application by directly downloading the [latest release](ht
 Future Plans
 ------------
 Ideas and fixes to do (might be interesting if you really want to do participate in the project). It's not in a particular order, just how I thought of the things...
-- [ ] Comment the stuff
-- [ ] Organize files and clean up
+- [x] Comment the stuff
+- [ ] ~~Organize files and clean up~~ (needs a little more)
 - [ ] Push first release
 - [ ] Test the autoupdate
 - [ ] Add an about screen
 - [ ] Set up the `.nav-tabs` to host many more websites
 - [ ] Finish up the styling of EDDB.io (some bugs are still out there)
-- [ ] Decide on whether or not [EDShipyard](http://www.edshipyard.com/) should stay since Coriolis does the same job
 - [x] Grab a coffee
 
 Contributing
