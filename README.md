@@ -48,9 +48,11 @@ Future Plans
 Ideas and fixes to do (might be interesting if you really want to do participate in the project). It's not in a particular order, just how I thought of the things...
 - [x] Comment the stuff
 - [x] Organize files and clean up (needs a little more)
-- [ ] Push first release
+- [x] Push first release
 - [ ] Test the autoupdate
 - [ ] Add an about screen
+- [ ] Fix the non-persistent cookie bug
+- [ ] Change the app name on Windows
 - [ ] ~~Set up the `.nav-tabs` to host many more websites~~ (not enough websites to actually need it)
 - [x] Finish up the styling of EDDB.io (some bugs are still out there)
 - [x] Grab a coffee
