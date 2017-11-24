@@ -38,8 +38,8 @@ button.nav-item {
   border-right: 1px solid #444 !important;
   height: 3.5em !important;
   border-radius: 0;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
   padding-top: 1em;
   padding-bottom: 1em;
   -webkit-app-region: no-drag;

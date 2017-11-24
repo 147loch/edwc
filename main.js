@@ -1,5 +1,12 @@
+//handle setupevents as quickly as possible
+const setupEvents = require('./installers/setupEvents')
+if (setupEvents.handleSquirrelEvent()) {
+   // squirrel event handled and app will exit in 1000ms, so don't do anything else
+   return;
+}
+
 // main electron imports
-const {app, autoUpdater, webContents, dialog, BrowserWindow, session} = require('electron')
+const {app, autoUpdater, webContents, dialog, BrowserWindow, session, ipcMain} = require('electron')
 
 // modules needed for the app to work
 const path  = require('path')
@@ -67,9 +74,6 @@ function createWindow () {
     protocol: 'file:',
     slashes: true
   }));
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
 
   // Hide the menu
   mainWindow.setMenu(null);

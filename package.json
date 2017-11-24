@@ -1,11 +1,15 @@
 {
-  "name": "elite-websites-companion",
-  "productName": "Elite: Dangerous Websites Companion",
-  "version": "0.1.0",
+  "name": "edwc",
+  "productName": "edwc",
+  "version": "0.1.5",
   "description": "An Electron app that puts every Elite: Dangerous community websites at the same place.",
   "main": "main.js",
   "scripts": {
-    "start": "./node_modules/.bin/electron ."
+    "start": "./node_modules/.bin/electron .",
+    "package-mac": "electron-packager . --overwrite --asar=true --platform=darwin --arch=x64 --icon=src/images/favicon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/images/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=LCH --version-string.FileDescription=LCH --version-string.ProductName=\"edwc\"",
+    "create-installer-mac": "electron-installer-dmg ./release-builds/edwc-darwin-x64/edwc.app edwc --out=release-builds --overwrite --icon=src/images/favicon.icns",
+    "create-installer-win": "node installers/windows/createinstaller.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +30,8 @@
   "devDependencies": {
     "electron": "^1.7.9",
     "electron-is-dev": "^0.3.0",
-    "electron-reload": "^1.2.2"
+    "electron-reload": "^1.2.2",
+    "electron-winstaller": "^2.6.3"
   },
   "dependencies": {
     "electron-cookies": "^1.1.0",

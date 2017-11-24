@@ -128,6 +128,18 @@ li
   border: none;
 }
 
+h2.powerHeadline {
+  color: rgb(255,115,0);
+}
+
+.box-links h2 {
+  color: rgb(255,115,0);
+}
+
+.filter-group h3 {
+  color: rgb(255,115,0);
+}
+
 /* === Panels === */
 
 .panel
@@ -705,11 +717,22 @@ inset 0 -8px 8px -8px rgb(253,131,31);
   color: rgb(236,149,61);
 }
 
+.box .box-heading .copy-clipboard {
+    color: #fff;
+}
+
 .loop-list .loop-details .loop-result-wrapper .loop-result-profit, .loops-result .loop-details .loop-result-wrapper .loop-result-profit, .single-result .loop-details .loop-result-wrapper .loop-result-profit
 {
   background-color: #111;
   border-top: 2px solid rgb(255,115,0);
   border-left: 2px solid rgb(255,115,0);
+}
+
+.loop-result-distance
+{
+  background-color: #111 !important;
+  border-top: 2px solid rgb(255,115,0) !important;
+  border-right: 2px solid rgb(255,115,0) !important;
 }
 
 .loop-list .loop-details .loop-result-wrapper .loop-result-profit, .loop-list .loop-details .loop-result-wrapper .loop-result-distance, .loops-result .loop-details .loop-result-wrapper .loop-result-profit, .loops-result .loop-details .loop-result-wrapper .loop-result-distance, .single-result .loop-details .loop-result-wrapper .loop-result-profit, .single-result .loop-details .loop-result-wrapper .loop-result-distance
