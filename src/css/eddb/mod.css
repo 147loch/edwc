@@ -756,21 +756,25 @@ inset 0 -8px 8px -8px rgb(253,131,31);
 }
 
 .material-rarity-group-10 {
-    background-color: rgb(193, 116, 0);
-    color: #ffd4b3;
+  background-color: rgb(193, 116, 0);
+  color: #ffd4b3;
 }
 
 .material-rarity-group-20 {
-    background-color: rgb(172, 93, 0);
-    color: #facca7;
+  background-color: rgb(172, 93, 0);
+  color: #facca7;
 }
 
 .material-rarity-group-30 {
-    background-color: rgb(129, 54, 0);
-    color: #fe8b6e;
+  background-color: rgb(129, 54, 0);
+  color: #fe8b6e;
 }
 
 .material-rarity-group-40 {
-    background-color: rgb(92, 28, 0);
-    color: #ff736a;
+  background-color: rgb(92, 28, 0);
+  color: #ff736a;
+}
+
+.box-heading:hover {
+  background: rgba(255,115,0,0.2) !important;
 }
