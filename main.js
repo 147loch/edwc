@@ -20,12 +20,19 @@ const log   = require('electron-log')
 if (!isDev) {
   // set up the server's (I really should get it working on my Ubuntu 14.04 server cuz using another service is unprofessional...)
   // const server = 'https://edwc-updates.herokuapp.com/download'
-
-  // set up the feed
+  //
+  // // set up the feed
   // autoUpdater.setFeedURL(server)
+  //
+  // // check if updates every minute.
+  // setInterval(() => {
+  //   autoUpdater.checkForUpdates()
+  //   log.info('checkUpdate')
+  // }, 60000)
 
-  // check if updates every minute.
-  // setIntervals
+  // app.on('update-available', (event) => {
+  //   log.info('updateAvailable')
+  // })
 
   // when an update is ready to be installed, ask the user and badaboom the update is done.
   // autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
