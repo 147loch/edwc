@@ -13,42 +13,40 @@ const path  = require('path')
 const url   = require('url')
 const fs    = require('fs')
 const isDev = require('electron-is-dev')
+const log   = require('electron-log')
 
 // if the app is not in development mode (packaged),
 // load the autoUpdater's distant server connected to github's releases of the repo
 if (!isDev) {
   // set up the server's (I really should get it working on my Ubuntu 14.04 server cuz using another service is unprofessional...)
-  const server = 'https://edwc-updates.herokuapp.com/'
-  const feed = `${server}/download/${process.platform}`
+  // const server = 'https://edwc-updates.herokuapp.com/download'
 
   // set up the feed
-  autoUpdater.setFeedURL(feed)
+  // autoUpdater.setFeedURL(server)
 
   // check if updates every minute.
-  setInterval(() => {
-    autoUpdater.checkForUpdates()
-  }, 60000)
+  // setIntervals
 
   // when an update is ready to be installed, ask the user and badaboom the update is done.
-  autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
-    const dialogOpts = {
-      type: 'info',
-      buttons: ['Restart', 'Later'],
-      title: 'Application Update',
-      message: process.platform === 'win32' ? releaseNotes : releaseName,
-      detail: 'A new version has been downloaded. Restart the application to apply the updates.'
-    }
-
-    dialog.showMessageBox(dialogOpts, (response) => {
-      if (response === 0) autoUpdater.quitAndInstall()
-    })
-  })
-
-  // if a sad error happens, let the user know.
-  autoUpdater.on('error', message => {
-    console.error('There was a problem updating the application')
-    console.error(message)
-  })
+  // autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+  //   const dialogOpts = {
+  //     type: 'info',
+  //     buttons: ['Restart', 'Later'],
+  //     title: 'Application Update',
+  //     message: process.platform === 'win32' ? releaseNotes : releaseName,
+  //     detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+  //   }
+  //
+  //   dialog.showMessageBox(dialogOpts, (response) => {
+  //     if (response === 0) autoUpdater.quitAndInstall()
+  //   })
+  // })
+  //
+  // // if a sad error happens, let the user know.
+  // autoUpdater.on('error', message => {
+  //   log.error('There was a problem updating the application')
+  //   log.error(message)
+  // })
 } else {
   // if in development, load the electron-reload module for simplicity
   require('electron-reload')(__dirname)
@@ -107,6 +105,8 @@ function createWindow () {
   mainWindow.on('ready-to-show', () => {
     mainWindow.show();
   });
+
+  // mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
