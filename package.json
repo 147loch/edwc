@@ -11,8 +11,7 @@
     "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/images/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=LCH --version-string.FileDescription=LCH --version-string.ProductName=\"edwc\"",
     "create-installer-win": "node installers/windows/createinstaller.js",
     "release-win": "npm run package-win && npm run create-installer-win",
-    "publish": "build -p onTagOrDraft",
-    "release": "build -p onTagOrDraft"
+    "dist": "build -p onTagOrDraft"
   },
   "repository": {
     "type": "git",
