@@ -11,8 +11,8 @@
     "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/images/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=LCH --version-string.FileDescription=LCH --version-string.ProductName=\"edwc\"",
     "create-installer-win": "node installers/windows/createinstaller.js",
     "release-win": "npm run package-win && npm run create-installer-win",
-    "publish": "./node_modules/.bin/electron-builder -p always",
-    "release": "yarn compile && electron-builder -p always"
+    "publish": "build -p onTagOrDraft",
+    "release": "build -p onTagOrDraft"
   },
   "repository": {
     "type": "git",
@@ -44,9 +44,43 @@
     "jquery": "^3.2.1"
   },
   "build": {
-    "appId": "ch.147loch.edwc",
+    "appId": "ch.147lo.beta.edwc",
+    "category": "public.app-category.tool",
+    "files": [
+      "build/",
+      "dist/",
+      "node_modules/",
+      "src/",
+      "vendor/"
+      "main.js",
+      "index.html",
+      "manipulateEDDB.js",
+      "package.json"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
     "mac": {
-      "category": "tool",
       "target": [
         "zip",
         "dmg"
