@@ -1,4 +1,4 @@
-Elite: Dangerous Websites Companion [![Build status](https://ci.appveyor.com/api/projects/status/ui07qoth9sqip7a2?svg=true)](https://ci.appveyor.com/project/147loch/edwc) [![Build Status](https://travis-ci.org/147loch/edwc.svg?branch=master)](https://travis-ci.org/147loch/edwc)
+Elite: Dangerous Websites Companion [![Build status](https://ci.appveyor.com/api/projects/status/ui07qoth9sqip7a2?svg=true)](https://ci.appveyor.com/project/147loch/edwc) [![Build Status](https://travis-ci.org/147loch/edwc.svg?branch=master)](https://travis-ci.org/147loch/edwc) ![Dependencies](https://david-dm.org/147loch/edwc.svg)
 ====================================
 
 Elite: Dangerous Websites Companion or **EDWC** is an app made by 147loch [/wʌn ˈhʌndrəd ˈfɔːti-ˈsɛvn lɔʃ/] (Loïc Herman) which puts every website made by the Elite: Dangerous Community Developers team, thus gives a nice dark-themed and useful app to use when playing Elite: Dangerous.
