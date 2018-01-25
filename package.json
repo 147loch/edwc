@@ -27,7 +27,11 @@
     "companion",
     "app"
   ],
-  "author": "147loch",
+  "author": {
+    "name": "Loïc Herman",
+    "email": "contact@147lo.ch",
+    "url": "https://147lo.ch/"
+  },
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.7.11",
