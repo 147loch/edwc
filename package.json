@@ -1,15 +1,18 @@
 {
   "name": "edwc",
   "productName": "Elite Dangerous Websites Companion",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "An Electron app that puts every Elite: Dangerous community websites at the same place.",
+  "copyright": "Copyright © year ${author}",
   "main": "main.js",
   "scripts": {
     "start": "./node_modules/.bin/electron .",
     "package-mac": "electron-packager . --overwrite --asar=true --platform=darwin --arch=x64 --icon=src/images/favicon.icns --prune=true --out=release-builds",
     "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/images/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=LCH --version-string.FileDescription=LCH --version-string.ProductName=\"edwc\"",
     "create-installer-win": "node installers/windows/createinstaller.js",
-    "release-win": "npm run package-win && npm run create-installer-win"
+    "release-win": "npm run package-win && npm run create-installer-win",
+    "publish": "./node_modules/.bin/electron-builder -p always",
+    "release": "yarn compile && ./node_modules/.bin/electron-builder -p always"
   },
   "repository": {
     "type": "git",
@@ -29,14 +32,25 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.7.9",
+    "electron-builder": "^19.43.3",
+    "electron-builder-squirrel-windows": "^19.55.2",
     "electron-is-dev": "^0.3.0",
-    "electron-reload": "^1.2.2",
-    "electron-winstaller": "^2.6.3"
+    "electron-reload": "^1.2.2"
   },
   "dependencies": {
     "electron-cookies": "^1.1.0",
     "electron-log": "^2.2.11",
-    "electron-updater": "^2.16.1",
+    "electron-updater": "^2.20.1",
     "jquery": "^3.2.1"
+  },
+  "build": {
+    "appId": "ch.147loch.edwc",
+    "mac": {
+      "category": "tool",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    }
   }
 }

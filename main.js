@@ -1,12 +1,6 @@
-//handle setupevents as quickly as possible
-const setupEvents = require('./installers/setupEvents')
-if (setupEvents.handleSquirrelEvent()) {
-   // squirrel event handled and app will exit in 1000ms, so don't do anything else
-   return;
-}
-
 // main electron imports
-const {app, autoUpdater, webContents, dialog, BrowserWindow, session, ipcMain} = require('electron')
+const {app, webContents, dialog, BrowserWindow, session, ipcMain} = require('electron')
+const {autoUpdater} = require("electron-updater");
 
 // modules needed for the app to work
 const path  = require('path')
@@ -14,6 +8,10 @@ const url   = require('url')
 const fs    = require('fs')
 const isDev = require('electron-is-dev')
 const log   = require('electron-log')
+
+autoUpdater.logger = log;
+autoUpdater.logger.transports.file.level = 'info';
+log.info('App starting...');
 
 // if the app is not in development mode (packaged),
 // load the autoUpdater's distant server connected to github's releases of the repo
@@ -107,6 +105,8 @@ function createWindow () {
         })
       }
     }
+
+    autoUpdater.checkForUpdatesAndNotify();
   });
 
   mainWindow.on('ready-to-show', () => {
