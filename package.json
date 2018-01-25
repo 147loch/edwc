@@ -12,7 +12,7 @@
     "create-installer-win": "node installers/windows/createinstaller.js",
     "release-win": "npm run package-win && npm run create-installer-win",
     "publish": "./node_modules/.bin/electron-builder -p always",
-    "release": "yarn compile && ./node_modules/.bin/electron-builder -p always"
+    "release": "yarn compile && electron-builder -p always"
   },
   "repository": {
     "type": "git",
