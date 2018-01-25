@@ -51,7 +51,7 @@
       "dist/",
       "node_modules/",
       "src/",
-      "vendor/"
+      "vendor/",
       "main.js",
       "index.html",
       "manipulateEDDB.js",
