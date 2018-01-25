@@ -1,5 +1,8 @@
-Elite: Dangerous Websites Companion [![Build Status](https://travis-ci.org/147loch/edwc.svg?branch=master)](https://travis-ci.org/147loch/edwc) ![Dependencies](https://david-dm.org/147loch/edwc.svg)
+Elite: Dangerous Websites Companion
 ====================================
+[![license](https://img.shields.io/github/license/147loch/edwc.svg?style=for-the-badge)](https://github.com/147loch/edwc/blob/master/LICENSE.md) [![Travis](https://img.shields.io/travis/147loch/edwc.svg?style=for-the-badge)](https://travis-ci.org/147loch/edwc) [![Github All Releases](https://img.shields.io/github/downloads/147loch/edwc/total.svg?style=for-the-badge)](https://github.com/147loch/edwc/releases) [![GitHub release](https://img.shields.io/github/release/147loch/edwc.svg?style=for-the-badge)](https://github.com/147loch/edwc/releases) [![GitHub package version](https://img.shields.io/github/package-json/v/147loch/edwc.svg?style=for-the-badge)](https://github.com/147loch/edwc)
+[![David](https://img.shields.io/david/147loch/edwc.svg?style=for-the-badge)]() [![David](https://img.shields.io/david/dev/147loch/edwc.svg?style=for-the-badge)]()
+---
 
 Elite: Dangerous Websites Companion or **EDWC** is an app made by 147loch [/wʌn ˈhʌndrəd ˈfɔːti-ˈsɛvn lɔʃ/] (Loïc Herman) which puts every website made by the Elite: Dangerous Community Developers team, thus gives a nice dark-themed and useful app to use when playing Elite: Dangerous.
 
@@ -68,7 +71,7 @@ Perks of an app being on GitHub includes being able to include people's requests
   4. Does your pull request make EDWC easier to use or keeps it simple and accessible?
   5. Does your commit/pull request engender bugs/incompabilities/vulnerabilities or breaks anything?
   6. Does it fit the main goal of EDWC (an app that helps Elite: Dangerous players to play and find their way in the game)?
-  7. Does the commit requires new dependecies?
+  7. Does the commit requires new dependencies?
   8. Does the commit respects the [License](/LICENSE.md) of EDWC, or other dependencies' licenses?
   9. - Is the pull request fitting the way EDWC is written? (This is not a main one, but try to keep it a two-spaces ident at least) 
      - Does it includes basic ES6 writing styles, i.e. let/const or [other ES6 features](http://es6-features.org).
