@@ -52,8 +52,8 @@ Ideas and fixes to do (might be interesting if you really want to do participate
 - [ ] Test the autoupdate
 - [ ] Add an about screen
   - [ ] Add a version tag
-- [ ] Fix the non-persistent cookie bug
-- [ ] Change the app name on Windows
+- [x] Fix the non-persistent cookie bug
+- [x] Change the app name on Windows
 - [ ] ~~Set up the `.nav-tabs` to host many more websites~~ (not enough websites to actually need it)
 - [x] Finish up the styling of EDDB.io (some bugs are still out there)
 - [x] Grab a coffee
