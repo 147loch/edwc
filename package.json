@@ -44,7 +44,6 @@
   },
   "build": {
     "appId": "ch.147lo.beta.edwc",
-    "category": "public.app-category.tool",
     "files": [
       "build/",
       "dist/",
