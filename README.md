@@ -1,5 +1,7 @@
 Elite: Dangerous Websites Companion
 ====================================
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/147loch/edwc.svg)](https://greenkeeper.io/)
 [![license](https://img.shields.io/github/license/147loch/edwc.svg?style=for-the-badge)](https://github.com/147loch/edwc/blob/master/LICENSE.md) [![Travis](https://img.shields.io/travis/147loch/edwc.svg?style=for-the-badge)](https://travis-ci.org/147loch/edwc) [![Github All Releases](https://img.shields.io/github/downloads/147loch/edwc/total.svg?style=for-the-badge)](https://github.com/147loch/edwc/releases) [![GitHub release](https://img.shields.io/github/release/147loch/edwc.svg?style=for-the-badge)](https://github.com/147loch/edwc/releases) [![GitHub package version](https://img.shields.io/github/package-json/v/147loch/edwc.svg?style=for-the-badge)](https://github.com/147loch/edwc)
 [![David](https://img.shields.io/david/147loch/edwc.svg?style=for-the-badge)]() [![David](https://img.shields.io/david/dev/147loch/edwc.svg?style=for-the-badge)]()
 ---
