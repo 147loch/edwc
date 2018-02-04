@@ -1,7 +1,7 @@
 {
   "name": "edwc",
   "productName": "Elite Dangerous Websites Companion",
-  "version": "0.1.9",
+  "version": "1.0.0",
   "description": "An Electron app that puts every Elite: Dangerous community websites at the same place.",
   "copyright": "Copyright © year ${author}",
   "main": "main.js",

@@ -6,5 +6,5 @@ const path = require('path')
 window.onload = function() {
   // $('.bottom-ad')[0].style.display='none';
   //Append the script to the the head tag, which is cool cause it overrides it!
-  $('head').append("<style>" + fs.readFileSync(path.join(__dirname, 'src/css/eddb/mod.css'), 'utf8') + "</style>");
+  $('head').append("<style>" + fs.readFileSync(path.join(__dirname, '../css/eddb/mod.css'), 'utf8') + "</style>");
 };

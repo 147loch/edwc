@@ -1,50 +1,36 @@
-/**
- * Main function for the loader to work automatically
- * Begins by going through each webview.
- *
- * BTW this probably not the best way to do it, but i've been getting errors due to page finishing loading 5 times (somehow) and
- * this is the best way I've found to get over it.
- */
-$('webview').each((i, e) => {
-  /**
-   * function that detects only once a loading start
-   */
-  function oneStartLoad() {
-    // Listen only one time to the did-start-loading event
-    $(e).one('did-start-loading', (ev) => {
-      // prevent default that i think is useless but looks professional so I kept it
-      ev.preventDefault();
-      // Debugging
-      // console.log(e, ev, i);
+// Loader script revamped
+$(document).ready(function() {
+  // Goo through every webpages
+  $('webview').each((i, e) => {
+    // Load webcontents and get the current url of webview
+    const {webContents} = require('electron')
+    const webview = $(e)[0]
+    let currentURL = webview.src
+    let fired = false
 
-      // set the webview css to hidden with a fade out so the loader which is in front appears.
-      $(e).css({opacity: 1, visibility: "visible"}).animate({opacity: 0}, '400');
-      $(e).css("visibility",  "hidden");
-      // fires the other function
-      oneStopLoad();
-    });
-  };
-  // fires automatically on first load the oneStartLoad() so the loop begins
-  oneStartLoad();
-  /**
-   * function that detects only once when a page stops loading
-   * fired when a page started loading
-   */
-  function oneStopLoad() {
-    // listen only one time when the page stopped loading
-    $(e).one('did-stop-loading', (ev) => {
-      // another fine professional touch
-      ev.preventDefault();
-      // Debugging
-      // console.log(e, ev, i);
+    /**
+     * When load starts, callback function
+     */
+    const loadstart = () => {
+      // If the current url does not equal the webview src, then fire the loader (fixes the glitch when pages were loading things async and fired the events anyway)
+      if (currentURL !== webview.src && !fired) {
+        $(e).css({opacity: 1, visibility: "visible"}).animate({opacity: 0}, '400')
+        $(e).css("visibility",  "hidden")
+        currentURL = webview.src
+        fired = true
+      }
+    }
 
-      // when triggered set the webivew back to a visible state
-      $(e).css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, '400');
-      // wait 1sec for the other stop and starts loading events to go through it without having to wait for the load to appear and disappear infinitly.
-      // This is the only way i found out to fix the error (i was getting 10 events when loading a page duh)
-      setTimeout(() => {
-        oneStartLoad();
-      }, 1000);
-    });
-  };
-})
+    /**
+     * When load finishes, callback function
+     */
+    const loadstop = () => {
+      $(e).css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, '400')
+      fired = false
+    }
+
+    // Event listeners on the webview
+    webview.getWebContents().on('did-stop-loading', loadstop)
+    webview.getWebContents().on('load-commit', loadstart)
+  })
+});
