@@ -36,13 +36,13 @@
   "devDependencies": {
     "electron-is-dev": "^1.0.0",
     "electron": "^3.0.0",
-    "electron-builder": "^20.40.2",
+    "electron-builder": "^22.2.0",
     "electron-reload": "^1.2.2"
   },
   "dependencies": {
     "electron-cookies": "^1.1.0",
     "electron-log": "^3.0.2",
-    "electron-updater": "^4.0.6",
+    "electron-updater": "^4.2.2",
     "jquery": "^3.2.1"
   },
   "build": {
