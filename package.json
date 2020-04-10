@@ -43,7 +43,7 @@
     "electron-cookies": "^1.1.0",
     "electron-log": "^3.0.2",
     "electron-updater": "^4.0.6",
-    "jquery": "^3.2.1"
+    "jquery": "^3.5.0"
   },
   "build": {
     "appId": "ch.147lo.beta.edwc",
